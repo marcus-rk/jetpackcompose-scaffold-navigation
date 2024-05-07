@@ -16,7 +16,7 @@ fun RootNavGraph() {
 
     NavHost(navController = rootNavHostController, startDestination = "auth") {
         navigation(route = "auth", startDestination = "auth-login") {
-            AuthNavGraph(rootNavHostController = rootNavHostController)
+            authNavGraph(rootNavHostController = rootNavHostController)
         }
         composable(route = "home") {
             HomeScreen(onNavigateToEvent = {

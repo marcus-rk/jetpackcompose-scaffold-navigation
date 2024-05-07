@@ -6,7 +6,7 @@ import androidx.navigation.compose.composable
 import com.example.navigation_scaffold.Screens.LoginScreen
 import com.example.navigation_scaffold.Screens.RegisterScreen
 
-fun NavGraphBuilder.AuthNavGraph(rootNavHostController: NavHostController) {
+fun NavGraphBuilder.authNavGraph(rootNavHostController: NavHostController) {
     composable("auth-login") {
         LoginScreen(
             onLoginClicked = {
