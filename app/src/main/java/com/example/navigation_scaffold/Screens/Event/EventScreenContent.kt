@@ -24,13 +24,14 @@ fun EventScreenContent(rootNavHostController: NavHostController) {
     Scaffold(
         topBar = {
             TopBar(
-                title = "Event",
+                title = "Events",
                 showBackButton = showBackButton,
-                onBackClick = { eventNavController.popBackStack() })
-                 },
+                onBackClick = { eventNavController.popBackStack() },
+                onProfileClick = { rootNavHostController.navigate("profile") }
+            )
+        },
         bottomBar = {
             BottomBar(
-                currentRoute = "event",
                 onHomeClicked = {
                     rootNavHostController.navigate("home")
                     rootNavHostController.popBackStack(
@@ -41,7 +42,9 @@ fun EventScreenContent(rootNavHostController: NavHostController) {
             )
         }
     ) { innerPadding ->
-        Box(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
+        Box(modifier = Modifier
+            .fillMaxSize()
+            .padding(innerPadding)) {
             EventNavGraph(eventNavController = eventNavController)
         }
     }
